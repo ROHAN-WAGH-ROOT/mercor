@@ -9,15 +9,15 @@ export default function ProjectSidebar({ title, sidebarClick = true }) {
         <div
           data-tooltip-target="tooltip-light"
           className={
-            title == "Mobile App"
+            title === "Mobile App"
               ? `flex border m-5 rounded-full ${
                   !sidebarClick ? "w-6 h-4" : "w-2 h-2"
                 } bg-[#7AC555]`
-              : title == "Website Redesign"
+              : title === "Website Redesign"
               ? `flex border m-5 rounded-full ${
                   !sidebarClick ? "w-6 h-4" : "w-2 h-2"
                 } bg-[#FFA500]`
-              : title == "Design System"
+              : title === "Design System"
               ? `flex border m-5 rounded-full ${
                   !sidebarClick ? "w-6 h-4" : "w-2 h-2"
                 } bg-[#E4CCFD]`
@@ -31,10 +31,10 @@ export default function ProjectSidebar({ title, sidebarClick = true }) {
 
         <div className="flex text-base ml-0 text-center justify-center align-middle m-auto font-semibold">
           {sidebarClick ? title : ""}
-          {sidebarClick == undefined && title}
+          {sidebarClick === undefined && title}
         </div>
 
-        {sidebarClick && <img className="m-2 mr-3" src={Opt} />}
+        {sidebarClick && <img className="m-2 mr-3" src={Opt} alt="logo" />}
       </div>
     </div>
   );

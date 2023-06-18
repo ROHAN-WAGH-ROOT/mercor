@@ -19,7 +19,7 @@ export default function Sidebar() {
       {sidebarClick ? (
         <div className="w-60 border-r h-full">
           <div className="flex m-0 border-b p-5 min-w-fit">
-            <img src={Circle} />
+            <img src={Circle} alt="logo" />
             <div className="flex font-serif font-semibold text-xl font-sans m-auto min-w-fit">
               Project M.
             </div>
@@ -29,6 +29,7 @@ export default function Sidebar() {
                 onClick={() => {
                   setSidebarClick(!sidebarClick);
                 }}
+                alt="logo"
                 src={Arrow}
               ></img>
             </div>
@@ -48,7 +49,7 @@ export default function Sidebar() {
               <div className="font-sans text-xs font-bold text-[#787486] ml-5">
                 MY PROJECTS
               </div>
-              <img className="flex justify-end mr-2" src={AddSquare} />
+              <img className="flex justify-end mr-2" src={AddSquare} alt="logo" />
             </div>
             <ProjectSidebar title={"Mobile App"} />
             <ProjectSidebar title={"Website Redesign"} />
@@ -62,7 +63,7 @@ export default function Sidebar() {
       ) : (
         <div className="w-20 border-r h-full">
           <div className="flex m-0 border-b p-5 min-w-fit">
-            <img src={Circle} />
+            <img src={Circle} alt="logo" />
             <div className="flex justify-end mr-0">
               <img
                 className="cursor-pointer w-6 h-6 rotate-180"
@@ -70,15 +71,16 @@ export default function Sidebar() {
                   setSidebarClick(!sidebarClick);
                 }}
                 src={Arrow}
+                alt="logo"
               ></img>
             </div>
           </div>
           <div className=" p-2">
-            <img className="m-auto p-2" src={Home} />
-            <img className="m-auto p-2" src={Message} />
-            <img className="m-auto p-2" src={Tasks} />
-            <img className="m-auto p-2" src={Members} />
-            <img className="m-auto p-2" src={Settings} />
+            <img className="m-auto p-2" alt="logo" src={Home} />
+            <img className="m-auto p-2" alt="logo" src={Message} />
+            <img className="m-auto p-2" alt="logo" src={Tasks} />
+            <img className="m-auto p-2" alt="logo" src={Members} />
+            <img className="m-auto p-2" alt="logo" src={Settings} />
           </div>
           <div>
             <hr className="border-1 border-[#DBDBDB] align-middle m-2 mt-3" />

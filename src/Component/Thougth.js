@@ -1,6 +1,5 @@
 import React from "react";
 import Bulb from "../Images/lamp-on.svg";
-import BulbBlur from "../Images/Ellipse 20.svg";
 
 export default function Thougth() {
   return (
@@ -9,6 +8,7 @@ export default function Thougth() {
         <img
           className="flex bg-cover m-auto align-middle text-center justify-center w-6 h-6"
           src={Bulb}
+          alt="logo"
         ></img>
       </div>
       <div className="opacity-1 bg-[#F5F5F5] w-auto align-middle justify-center m-auto p-3 rounded-2xl">
