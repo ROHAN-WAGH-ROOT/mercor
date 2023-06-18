@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Add from "../Images/add-square.svg";
 import Cards from "./Cards";
 
@@ -37,6 +37,7 @@ export default function DragComponent({
                 </div>
                 <div className="flex">
                   <img
+                    alt="logo"
                     onClick={() => {
                       count += 1;
                       setTodo([
@@ -62,7 +63,7 @@ export default function DragComponent({
               <div
                 ref={provided.innerRef}
                 {...provided.droppableProps}
-                className={todo.length == 0 ? "h-48" : null}
+                className={todo.length === 0 ? "h-48" : null}
               >
                 {todo.length > 0 &&
                   todo.map((ele, i) => {
@@ -111,7 +112,7 @@ export default function DragComponent({
               </div>
               <hr className="border-b-2 border-[#FFA500]" />
               <div
-                className={progress.length == 0 ? "h-48" : null}
+                className={progress.length === 0 ? "h-48" : null}
                 ref={provided.innerRef}
                 {...provided.droppableProps}
               >
@@ -162,7 +163,7 @@ export default function DragComponent({
               </div>
               <hr className="border-b-2 border-[#8BC48A]" />
               <div
-                className={done.length == 0 ? "h-48" : null}
+                className={done.length === 0 ? "h-48" : null}
                 ref={provided.innerRef}
                 {...provided.droppableProps}
               >
