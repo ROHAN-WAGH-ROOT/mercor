@@ -167,7 +167,7 @@ export default function Containt() {
     setValue(e.target.value);
   };
   return (
-    <div className="px-10 py-8">
+    <div className="px-10 py-8 w-full">
       <div className="sm:lg:xl:flex sm:lg:xl:justify-between 2xl:block 2xl:justify-start">
         <div className="flex">
           {edit ? (

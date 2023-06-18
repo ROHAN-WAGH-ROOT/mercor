@@ -18,13 +18,13 @@ export default function Cards({
   fileCount,
 }) {
   return (
-    <Draggable key={draggableId} draggableId={draggableId} index={index}>
+    <Draggable className="w-full" key={draggableId} draggableId={draggableId} index={index}>
       {(provided, snapshot) => (
         <div
           ref={provided.innerRef}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
-          className={"p-4 border w-25 mt-2 bg-[#fff] rounded-lg select-none"}
+          className={"p-4 border w-full mt-2 bg-[#fff] rounded-lg select-none"}
         >
           <div className="flex justify-between">
             <div
@@ -41,7 +41,7 @@ export default function Cards({
             </div>
           </div>
           <div className="text-lg font-sans font-semibold">{title}</div>
-          <div className="xl:flex 2xl:flex text-[#787486] font-sans font-normal text-xs sm:block lg:block">
+          <div className="flex text-[#787486] font-sans font-normal text-xs sm:block lg:block">
             {img.length > 0
               ? img.map((ele) => {
                   return (
@@ -58,7 +58,7 @@ export default function Cards({
               <img className="-ml-2" src={img2} alt="logo" />
               <img className="-ml-2" src={img3} alt="logo" />
             </div>
-            <div className="flex justify-between mt-2">
+            <div className="flex justify-between">
               <div className="flex">
                 <div className="ml-1">
                   <img className="w-4 h-4 mt-1" src={comment} alt="logo" />

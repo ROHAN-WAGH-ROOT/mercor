@@ -14,7 +14,7 @@ export default function DragComponent({
 }) {
   let count = todo.length + progress.length + done.length;
   return (
-    <div className="flex h-screen select-none w-full">
+    <div className="flex h-screen select-none">
       <div className="w-full mt-10 h-full min-h-min mr-3">
         <Droppable key={3} droppableId="todos">
           {(provided, snapshot) => (
@@ -73,7 +73,7 @@ export default function DragComponent({
                         className={
                           snapshot.isUsingPlaceholder
                             ? "border-2 border-dotted bg-[#EBE9F4] mt-1 rounded-lg"
-                            : null
+                            : "w-auto"
                         }
                       >
                         <Cards
@@ -124,7 +124,7 @@ export default function DragComponent({
                         className={
                           snapshot.isUsingPlaceholder
                             ? "border-2 border-dotted bg-[#EBE9F4] mt-1 rounded-lg"
-                            : null
+                            : "w-auto"
                         }
                       >
                         <Cards
@@ -175,7 +175,7 @@ export default function DragComponent({
                         className={
                           snapshot.isUsingPlaceholder
                             ? "border-2 border-dotted bg-[#EBE9F4] mt-1 rounded-lg"
-                            : null
+                            : "w-auto"
                         }
                       >
                         <Cards
