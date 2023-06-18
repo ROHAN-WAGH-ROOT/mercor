@@ -5,7 +5,7 @@ import comment from "../Images/message.svg";
 import img1 from "../Images/Ellipse 12.svg";
 import img2 from "../Images/Ellipse 14.svg";
 import img3 from "../Images/Ellipse 15.svg";
-import { Draggable, Droppable } from "react-beautiful-dnd";
+import { Draggable } from "react-beautiful-dnd";
 
 export default function Cards({
   index,
@@ -29,7 +29,7 @@ export default function Cards({
           <div className="flex justify-between">
             <div
               className={
-                status == "Completed"
+                status === "Completed"
                   ? "bg-[#83C29D33] text-center text-xs font-medium text-[#68B266] px-2 py-1 p-0 rounded-lg"
                   : "border-red-400 bg-[#DFA87433] text-center text-xs font-medium text-[#FF8551] px-2 py-1 p-0 rounded-lg"
               }
@@ -37,7 +37,7 @@ export default function Cards({
               {status}
             </div>
             <div className="text-center justify-center p-2 mt-2">
-              <img src={options} />
+              <img src={options} alt="logo" />
             </div>
           </div>
           <div className="text-lg font-sans font-semibold">{title}</div>
@@ -46,7 +46,7 @@ export default function Cards({
               ? img.map((ele) => {
                   return (
                     <div className="p-1">
-                      <img className="m-1" src={ele} />
+                      <img className="m-1" src={ele} alt="logo" />
                     </div>
                   );
                 })
@@ -54,14 +54,14 @@ export default function Cards({
           </div>
           <div className="flex justify-between mt-3">
             <div className="flex w-8">
-              <img className="-ml-2" src={img1} />
-              <img className="-ml-2" src={img2} />
-              <img className="-ml-2" src={img3} />
+              <img className="-ml-2" src={img1} alt="logo" />
+              <img className="-ml-2" src={img2} alt="logo" />
+              <img className="-ml-2" src={img3} alt="logo" />
             </div>
             <div className="flex justify-between mt-2">
               <div className="flex">
                 <div className="ml-1">
-                  <img className="w-4 h-4 mt-1" src={comment} />
+                  <img className="w-4 h-4 mt-1" src={comment} alt="logo" />
                 </div>
                 <div className="ml-1 text-[#787486]">
                   {commentCount} comment
@@ -69,7 +69,7 @@ export default function Cards({
               </div>
               <div className="flex">
                 <div className="ml-1">
-                  <img className="w-4 h-4 mt-1" src={folder} />
+                  <img className="w-4 h-4 mt-1" src={folder} alt="logo" />
                 </div>
                 <div className="ml-1 text-[#787486]">{fileCount} files</div>
               </div>
