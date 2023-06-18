@@ -90,14 +90,14 @@ export default function Containt() {
     const { source, destination } = result;
     if (!destination) return;
     if (
-      destination.droppableId == source.droppableId &&
-      destination.index == source.index
+      destination.droppableId === source.droppableId &&
+      destination.index === source.index
     ) {
       return -1;
     }
     if (
-      destination.droppableId == source.droppableId &&
-      destination.index != source.index
+      destination.droppableId === source.droppableId &&
+      destination.index !== source.index
     ) {
       return -1;
     }
@@ -110,34 +110,36 @@ export default function Containt() {
     switch (destination?.droppableId) {
       case "todos":
         addCard =
-          source?.droppableId == "todos"
+          source?.droppableId === "todos"
             ? firstArray[source?.index]
-            : source?.droppableId == "progresss"
+            : source?.droppableId === "progresss"
             ? secondArray[source?.index]
             : thirdArray[source?.index];
         firstArray.splice(destination?.index, 0, addCard);
         break;
       case "progresss":
         addCard =
-          source?.droppableId == "todos"
+          source?.droppableId === "todos"
             ? firstArray[source?.index]
-            : source?.droppableId == "progresss"
+            : source?.droppableId === "progresss"
             ? secondArray[source?.index]
             : thirdArray[source?.index];
         secondArray.splice(destination?.index, 0, addCard);
         break;
       case "dones":
         addCard =
-          source?.droppableId == "todos"
+          source?.droppableId === "todos"
             ? firstArray[source?.index]
-            : source.droppableId == "progresss"
+            : source.droppableId === "progresss"
             ? secondArray[source?.index]
             : thirdArray[source?.index];
         thirdArray.splice(destination?.index, 0, addCard);
         break;
+      default:
+        return;
     }
 
-    switch (source.droppableId) {
+    switch (source?.droppableId) {
       case "todos":
         addCard = firstArray[source?.index];
         firstArray.splice(source?.index, 1);
@@ -150,6 +152,8 @@ export default function Containt() {
         addCard = thirdArray[source?.index];
         thirdArray.splice(source?.index, 1);
         break;
+      default:
+        return;
     }
     setTodo(firstArray);
     setProgress(secondArray);
@@ -163,22 +167,24 @@ export default function Containt() {
           <img
             className="w-8 h-8 mt-3 ml-3 bg-[#5030E533] p-1 rounded-lg cursor-pointer"
             src={pencil}
+            alt="logo"
           ></img>
           <img
             className="w-8 h-8 mt-3 ml-3 bg-[#5030E533] p-1 rounded-lg cursor-pointer"
             src={link}
+            alt="logo"
           ></img>
         </div>
         <div className="flex mt-3 sm:md:lg:mt-2 md:mt-0">
-          <img className="cursor-pointer" src={plus} />
+          <img className="cursor-pointer" src={plus} alt="logo" />
           <div className="font-sans font-medium text-base text-center justify-center ml-2 mr-3 mt-2 cursor-pointer">
             Invite
           </div>
-          <img className="-ml-2" src={one} />
-          <img className="-ml-2" src={two} />
-          <img className="-ml-2" src={three} />
-          <img className="-ml-2" src={four} />
-          <img className="-ml-2" src={five}></img>
+          <img className="-ml-2" alt="logo" src={one} />
+          <img className="-ml-2" alt="logo" src={two} />
+          <img className="-ml-2" alt="logo" src={three} />
+          <img className="-ml-2" alt="logo" src={four} />
+          <img className="-ml-2" alt="logo" src={five}></img>
           <div className="relative text-center top-2 -left-8 text-[#D25B68] font-medium font-sans text-lg">
             +2
           </div>
@@ -187,14 +193,30 @@ export default function Containt() {
       <div className="sm:lg:xl:flex justify-between 2xl:justify-start">
         <div className="flex">
           <div className="flex border w-28 text-center justify-center p-1 rounded-lg mt-5 cursor-pointer">
-            <img className="mt-2 w-4 h-4 text-[#787486]" src={Filter} />
+            <img
+              className="mt-2 w-4 h-4 text-[#787486]"
+              src={Filter}
+              alt="logo"
+            />
             <label className="ml-2 text-[#787486] cursor-pointer">Filter</label>
-            <img className="ml-2 text-[#787486] mt-1 w-4 h-4" src={arrow} />
+            <img
+              className="ml-2 text-[#787486] mt-1 w-4 h-4"
+              src={arrow}
+              alt="logo"
+            />
           </div>
           <div className="flex border w-28 text-center justify-center p-1 rounded-lg mt-5 ml-3 cursor-pointer">
-            <img className="mt-2 w-4 h-4 text-[#787486]" src={calender} />
+            <img
+              className="mt-2 w-4 h-4 text-[#787486]"
+              src={calender}
+              alt="logo"
+            />
             <label className="ml-2 text-[#787486] cursor-pointer">Today</label>
-            <img className="ml-2 text-[#787486] mt-1 w-4 h-4" src={arrow} />
+            <img
+              className="ml-2 text-[#787486] mt-1 w-4 h-4"
+              src={arrow}
+              alt="logo"
+            />
           </div>
         </div>
         <div className="flex mt-3">
@@ -202,16 +224,18 @@ export default function Containt() {
             <img
               className="cursor-pointer mr-2 w-4 h-4 mt-1 text-[#787486]"
               src={share}
+              alt="logo"
             />
             <button className="text-[#787486] font-medium text-sm">
               Share
             </button>
           </div>
           <hr className="text-black rotate-90 w-8 relative top-5 justify-center text-center align-middle" />
-          <img className="cursor-pointer w-8 h-8 mt-1" src={equal} />
+          <img className="cursor-pointer w-8 h-8 mt-1" src={equal} alt="logo" />
           <img
             className="flex mt-3 ml-3 cursor-pointer text-center justify-center w-4 h-4"
             src={group2}
+            alt="logo"
           />
         </div>
       </div>
