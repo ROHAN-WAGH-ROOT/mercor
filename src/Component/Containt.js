@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import link from "../Images/link.svg";
 import pencil from "../Images/pencil.svg";
 import plus from "../Images/add-square.svg";
@@ -21,6 +21,9 @@ import img3 from "../Images/Plant Care App (Dribbble shot) 1.svg";
 import { DragDropContext } from "react-beautiful-dnd";
 
 export default function Containt() {
+  const ref = useRef();
+  const [value, setValue] = useState("Mobile App");
+  const [edit, setEdit] = useState(false);
   const [todo, setTodo] = useState([
     {
       id: "1",
@@ -159,12 +162,39 @@ export default function Containt() {
     setProgress(secondArray);
     setDone(thirdArray);
   };
+
+  const handleEdit = (e) => {
+    setValue(e.target.value);
+  };
   return (
     <div className="px-10 py-8">
       <div className="sm:lg:xl:flex sm:lg:xl:justify-between 2xl:block 2xl:justify-start">
         <div className="flex">
-          <div className="font-semibold text-5xl font-sans">Mobile App</div>
+          {edit ? (
+            <input
+              ref={ref}
+              name="name"
+              type="text"
+              placeholder="Enter name"
+              className={`outline-none ${edit ? "visible" : "invisible"}`}
+              onChange={(e) => {
+                handleEdit(e);
+              }}
+            />
+          ) : (
+            <div
+              className={`font-semibold text-5xl font-sans ${
+                edit ? "invisible" : "visible"
+              }`}
+            >
+              {value}
+            </div>
+          )}
+
           <img
+            onClick={() => {
+              setEdit(!edit);
+            }}
             className="w-8 h-8 mt-3 ml-3 bg-[#5030E533] p-1 rounded-lg cursor-pointer"
             src={pencil}
             alt="logo"
@@ -239,7 +269,7 @@ export default function Containt() {
           />
         </div>
       </div>
-      <div className="h-20">
+      <div className="h-20 w-full">
         <DragDropContext onDragEnd={(result) => onDragEnd(result)}>
           <DragComponent
             todo={todo}

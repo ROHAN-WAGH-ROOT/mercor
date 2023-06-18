@@ -21,14 +21,14 @@ export default function Header() {
           className="flex pl-8 py-2 w-96 mr-40 min-w-fit m-auto ml-2 focus-visible:border outline-none border bg-[#F5F5F5]"
         ></input>
       </div>
-      <div className="flex text-center justify-center m-auto">
-        <div className="p-2">
+      <div className="flex text-center justify-center">
+        <div className="p-2 w-16 h-18">
           <img src={Calender} alt="logo" />
         </div>
-        <div className="p-2">
+        <div className="p-2 w-16 h-18">
           <img src={Message} alt="logo" />
         </div>
-        <div className="p-2">
+        <div className="p-2 w-16 h-18">
           <img src={Notification} alt="logo" />
         </div>
       </div>

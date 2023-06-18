@@ -3,13 +3,13 @@ import Sidebar from "./Component/Sidebar";
 import Containt from "./Component/Containt";
 function App() {
   return (
-      <div className="flex">
-        <Sidebar />
-        <div className="w-full">
-          <Header />
-          <Containt />
-        </div>
+    <div className="flex">
+      <Sidebar />
+      <div>
+        <Header />
+        <Containt />
       </div>
+    </div>
   );
 }
 

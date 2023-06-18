@@ -14,7 +14,7 @@ export default function DragComponent({
 }) {
   let count = todo.length + progress.length + done.length;
   return (
-    <div className="flex h-screen select-none">
+    <div className="flex h-screen select-none w-full">
       <div className="w-full mt-10 h-full min-h-min mr-3">
         <Droppable key={3} droppableId="todos">
           {(provided, snapshot) => (
